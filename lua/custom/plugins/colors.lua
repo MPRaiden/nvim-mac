@@ -18,23 +18,11 @@ function ColorMyPencils(color)
 end
 
 return {
-  -- gruvbuddy
-  {
-    'tjdevries/colorbuddy.nvim',
-
-    lazy = false,
-    priority = 1000,
-    enabled = true,
-    config = function()
-      -- Apply theme
-      ColorMyPencils 'gruvbuddy'
-    end,
-  },
   {
     'folke/tokyonight.nvim',
     lazy = false,
     priority = 1000,
-    enabled = false,
+    enabled = true,
     opts = {},
     config = function()
       require('tokyonight').setup {
@@ -50,24 +38,16 @@ return {
       ColorMyPencils 'tokyonight'
     end,
   },
-  -- needs rose-pine set in wezterm as well
+  -- gruvbuddy
   {
-    'rose-pine/neovim',
-    name = 'rose-pine',
-    lazy = false,
-    enabled = false,
-    config = function()
-      require('rose-pine').setup {
-        variant = 'main',
-        dark_variant = 'main',
-        transparent = true,
+    'tjdevries/colorbuddy.nvim',
 
-        highlight_groups = {
-          -- Comment = { fg = "foam" },
-          -- VertSplit = { fg = "muted", bg = "muted" },
-        },
-      }
-      ColorMyPencils 'rose-pine'
+    lazy = false,
+    priority = 1000,
+    enabled = true,
+    config = function()
+      -- Apply theme
+      ColorMyPencils 'gruvbuddy'
     end,
   },
 }
