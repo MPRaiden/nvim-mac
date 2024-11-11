@@ -24,7 +24,7 @@ return {
 
     lazy = false,
     priority = 1000,
-    enabled = true, -- to disable change to false
+    enabled = true,
     config = function()
       -- Apply theme
       ColorMyPencils 'gruvbuddy'
@@ -34,7 +34,7 @@ return {
     'folke/tokyonight.nvim',
     lazy = false,
     priority = 1000,
-    enabled = false, -- to enable change to true
+    enabled = false,
     opts = {},
     config = function()
       require('tokyonight').setup {
@@ -48,6 +48,26 @@ return {
         },
       }
       ColorMyPencils 'tokyonight'
+    end,
+  },
+  -- needs rose-pine set in wezterm as well
+  {
+    'rose-pine/neovim',
+    name = 'rose-pine',
+    lazy = false,
+    enabled = false,
+    config = function()
+      require('rose-pine').setup {
+        variant = 'main',
+        dark_variant = 'main',
+        transparent = true,
+
+        highlight_groups = {
+          -- Comment = { fg = "foam" },
+          -- VertSplit = { fg = "muted", bg = "muted" },
+        },
+      }
+      ColorMyPencils 'rose-pine'
     end,
   },
 }
