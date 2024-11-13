@@ -15,6 +15,9 @@ function ColorMyPencils(color)
   vim.api.nvim_set_hl(0, 'StatusLine', { link = 'Normal' })
   vim.api.nvim_set_hl(0, 'Whitespace', { fg = '#4c4c4c' })
   vim.api.nvim_set_hl(0, 'LineNr', { bg = '#000000', fg = '#4c4c4c' })
+  if color == 'gruvbuddy' then
+    vim.api.nvim_set_hl(0, 'TelescopeSelection', { bg = '#161a2e' })
+  end
 end
 
 return {
@@ -22,7 +25,7 @@ return {
     'folke/tokyonight.nvim',
     lazy = false,
     priority = 1000,
-    enabled = true,
+    enabled = false,
     opts = {},
     config = function()
       require('tokyonight').setup {
@@ -38,6 +41,7 @@ return {
       ColorMyPencils 'tokyonight'
     end,
   },
+
   -- gruvbuddy
   {
     'tjdevries/colorbuddy.nvim',
