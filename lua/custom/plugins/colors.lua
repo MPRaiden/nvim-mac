@@ -43,6 +43,7 @@ return {
   },
 
   -- gruvbuddy
+  -- TODO: FIgure out why the colors for the line numbers and oil.nvim are broken
   {
     'tjdevries/colorbuddy.nvim',
 
