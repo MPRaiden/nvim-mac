@@ -1,4 +1,5 @@
 function ColorMyPencils(color)
+  --TODO: Fix oi.nvim actions and harpoon colors
   vim.cmd.colorscheme(color)
 
   vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
@@ -15,7 +16,6 @@ function ColorMyPencils(color)
   vim.api.nvim_set_hl(0, 'StatusLine', { link = 'Normal' })
   vim.api.nvim_set_hl(0, 'Whitespace', { fg = '#4c4c4c' })
   vim.api.nvim_set_hl(0, 'LineNr', { fg = '#7c7c7c', bg = 'none' })
-  vim.api.nvim_set_hl(0, 'CursorLineNr', { bg = 'none' })
   if color == 'gruvbuddy' then
     vim.api.nvim_set_hl(0, 'TelescopeSelection', { bg = '#161a2e' })
   end
