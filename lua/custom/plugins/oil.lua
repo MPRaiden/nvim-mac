@@ -21,6 +21,7 @@ return {
         },
         win_options = {
           winbar = '%{v:lua.CustomOilBar()}',
+          winhl = 'Normal:Normal,Float:Float',
         },
         view_options = {
           show_hidden = true,

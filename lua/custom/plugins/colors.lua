@@ -1,5 +1,5 @@
 function ColorMyPencils(color)
-  --TODO: Fix oi.nvim actions and harpoon colors
+  --TODO: Fix oil.nvim actions and harpoon colors
   vim.cmd.colorscheme(color)
 
   vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
