@@ -1,8 +1,8 @@
-function ColorMyPencils(color)
-  --TODO: Fix oil.nvim actions and harpoon colors
+function Color(color)
   vim.cmd.colorscheme(color)
 
   vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+  vim.api.nvim_set_hl(0, 'NormalNC', { bg = 'none' }) -- Inactive windows
   vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
 
   -- Additional highlights for Telescope and other UI components
@@ -15,13 +15,23 @@ function ColorMyPencils(color)
   vim.api.nvim_set_hl(0, 'CmpItemMenu', { link = 'Normal' })
   vim.api.nvim_set_hl(0, 'StatusLine', { link = 'Normal' })
   vim.api.nvim_set_hl(0, 'Whitespace', { fg = '#4c4c4c' })
-  vim.api.nvim_set_hl(0, 'LineNr', { fg = '#7c7c7c', bg = 'none' })
+
   if color == 'gruvbuddy' then
+    vim.api.nvim_set_hl(0, 'LineNr', { bg = 'none', fg = '#4c4c4c' })
     vim.api.nvim_set_hl(0, 'TelescopeSelection', { bg = '#161a2e' })
   end
 end
 
 return {
+  {
+    'tjdevries/colorbuddy.nvim',
+    lazy = false,
+    priority = 1000,
+    enabled = true,
+    config = function()
+      Color 'gruvbuddy'
+    end,
+  },
   {
     'folke/tokyonight.nvim',
     lazy = false,
@@ -33,24 +43,8 @@ return {
         style = 'night',
         transparent = true,
         terminal_colors = true,
-        styles = {
-          italic = false,
-          sidebars = 'dark',
-          floats = 'dark',
-        },
       }
-      ColorMyPencils 'tokyonight'
-    end,
-  },
-
-  {
-    'tjdevries/colorbuddy.nvim',
-
-    lazy = false,
-    priority = 1000,
-    enabled = true,
-    config = function()
-      ColorMyPencils 'gruvbuddy'
+      Color 'tokyonight'
     end,
   },
 }
