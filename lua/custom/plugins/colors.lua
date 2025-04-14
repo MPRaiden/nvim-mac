@@ -19,7 +19,7 @@ end
 return {
   {
     'tjdevries/colorbuddy.nvim',
-    enabled = false,
+    enabled = true,
     lazy = false,
     priority = 1000,
     config = function()
@@ -28,7 +28,7 @@ return {
   },
   {
     'folke/tokyonight.nvim',
-    enabled = true,
+    enabled = false,
     lazy = false,
     priority = 1000,
     config = function()
