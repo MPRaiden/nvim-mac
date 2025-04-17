@@ -35,6 +35,7 @@ return {
         gopls = {
           settings = {
             gopls = {
+              staticcheck = true,
               hints = {
                 assignVariableTypes = true,
                 compositeLiteralFields = true,
@@ -43,6 +44,19 @@ return {
                 functionTypeParameters = true,
                 parameterNames = true,
                 rangeVariableTypes = true,
+              },
+            },
+          },
+        },
+
+        pyright = {
+          settings = {
+            python = {
+              analysis = {
+                typeCheckingMode = 'basic', -- can be "off", "basic", or "strict"
+                autoSearchPaths = true,
+                useLibraryCodeForTypes = true,
+                diagnosticMode = 'workspace',
               },
             },
           },
