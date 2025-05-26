@@ -1,7 +1,28 @@
 function Color(color)
+  if vim.g.neovide then
+    vim.g.neovide_padding_top = 20
+    vim.o.termguicolors = true -- Ensure true color support
+  end
+
+  -- Disable italics for gruvbox (only works before loading the colorscheme)
+  if color == 'gruvbox' then
+    require('gruvbox').setup {
+      italic = {
+        strings = false,
+        emphasis = false,
+        comments = false,
+        operators = false,
+        folds = false,
+      },
+      bold = false,
+    }
+  end
+
   vim.cmd.colorscheme(color)
 
-  vim.api.nvim_set_hl(0, 'Normal', { link = 'Normal' })
+  -- Your custom highlights
+  vim.api.nvim_set_hl(0, 'Normal', { bg = '#1d2021', fg = '#ebdbb2' })
+  --vim.api.nvim_set_hl(0, 'Normal', { link = 'Normal' })
   vim.api.nvim_set_hl(0, 'NormalFloat', { link = 'Normal' })
   vim.api.nvim_set_hl(0, 'SignColumn', { link = 'Normal' })
   vim.api.nvim_set_hl(0, 'CmpItemMenu', { link = 'Normal' })
