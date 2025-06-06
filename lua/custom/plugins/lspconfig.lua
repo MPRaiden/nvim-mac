@@ -5,7 +5,7 @@ return {
       { 'williamboman/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
-      { 'j-hui/fidget.nvim', opts = {} },
+      { 'j-hui/fidget.nvim',       opts = {} },
     },
 
     config = function()
@@ -56,7 +56,7 @@ return {
 
       require('mason-lspconfig').setup {
         ensure_installed = ensure_installed, -- List of servers to install
-        automatic_enable = true, -- Automatically enable installed servers
+        automatic_enable = true,             -- Automatically enable installed servers
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}

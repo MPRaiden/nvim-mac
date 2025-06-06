@@ -22,13 +22,13 @@ return {
       { 'nvim-telescope/telescope-ui-select.nvim' },
 
       -- Useful for getting pretty icons, but requires a Nerd Font.
-      { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
+      { 'nvim-tree/nvim-web-devicons',            enabled = vim.g.have_nerd_font },
     },
     config = function()
       require('telescope').setup {
         defaults = {
           find_command = { 'fd', '--type', 'f', '--hidden', '--exclude', '.git' }, -- Use fd to show hidden files except .git
-          layout_strategy = 'vertical', -- adjust depending on display
+          layout_strategy = 'vertical',                                            -- adjust depending on display
         },
         pickers = {
           find_files = {
