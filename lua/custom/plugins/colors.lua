@@ -37,7 +37,6 @@ return {
 
       if vim.g.neovide then
         vim.g.neovide_padding_top = 20
-        vim.g.neovide_hide_mouse_when_typing = true
       end
 
       require('onedark').load()
@@ -61,7 +60,6 @@ return {
 
       if vim.g.neovide then
         vim.g.neovide_padding_top = 20
-        vim.g.neovide_hide_mouse_when_typing = true
       end
 
       vim.cmd.colorscheme 'rose-pine'
@@ -87,7 +85,6 @@ return {
     config = function()
       if vim.g.neovide then
         vim.g.neovide_padding_top = 20
-        vim.g.neovide_hide_mouse_when_typing = true
       end
 
       vim.cmd.colorscheme 'tokyonight-night'
