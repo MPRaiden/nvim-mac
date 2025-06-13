@@ -3,7 +3,7 @@ return {
     'nvim-tree/nvim-tree.lua',
     opts = {
       -- example customization
-      view = { side = 'left', width = 40 },
+      view = { side = 'left', width = 30 },
       update_focused_file = { enable = true, update_root = true },
 
       filters = {
