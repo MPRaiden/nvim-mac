@@ -7,7 +7,7 @@ return {
       direction = 'horizontal',
       size = function(term)
         if term.direction == 'horizontal' then
-          return math.floor(vim.o.lines * 0.3)
+          return math.floor(vim.o.lines * 0.5)
         end
       end,
       start_in_insert = true,

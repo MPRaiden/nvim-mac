@@ -24,7 +24,7 @@ end
 return {
   {
     'navarasu/onedark.nvim',
-    enabled = true,
+    enabled = false,
     lazy = false,
     priority = 1000,
     config = function()
@@ -67,11 +67,10 @@ return {
   },
   {
     'folke/tokyonight.nvim',
-    enabled = false,
+    enabled = true,
     lazy = false,
     priority = 1000,
     opts = {
-      style = 'night', -- this doesnt work
       transparent = true,
       terminal_colors = true,
       styles = {
