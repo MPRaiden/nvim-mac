@@ -1,8 +1,5 @@
 -- For more options, you can see `:help option-list`
 
--- Make cursor default from terminal setting (makes cursor always a block even in Insert mode)
---vim.opt.guicursor = ''
-
 -- Tab and shift width set to 4 characters
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
@@ -54,11 +51,5 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 -- Preview substitutions live, as you type! (try it, open cmdline, type %s/vim/nvim) -> this replaces all instances of "vim" string with "nvim" and you get to see the preview of it for the file
 vim.opt.inccommand = 'split'
 
--- Show which line your cursor is on
--- vim.opt.cursorline = true
--- vim.opt.cursorcolumn = true
-
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
-
--- vim: ts=2 sts=2 sw=2 et
