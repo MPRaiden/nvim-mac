@@ -42,7 +42,7 @@ return {
         end, { desc = 'git [D]iff against last commit' })
 
         -- Toggles git blame for the current line
-        map('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = '[T]oggle git show [b]lame line' })
+        map('n', '<leader>gb', gitsigns.toggle_current_line_blame, { desc = '[T]oggle git show [b]lame line' })
       end,
     },
   },
