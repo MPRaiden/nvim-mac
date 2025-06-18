@@ -4,7 +4,8 @@ return {
     version = '*',
     opts = {
       open_mapping = [[<leader>t]],
-      direction = 'horizontal',
+      -- trying out tab terminal direction
+      direction = 'tab',
       size = function(term)
         if term.direction == 'horizontal' then
           return math.floor(vim.o.lines * 0.3)
