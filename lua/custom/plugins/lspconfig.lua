@@ -1,8 +1,8 @@
 return {
-  { -- LSP Configuration & Plugins
+  {
     'neovim/nvim-lspconfig',
     dependencies = {
-      { 'williamboman/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants
+      { 'williamboman/mason.nvim', config = true },
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
       { 'j-hui/fidget.nvim', opts = {} },
@@ -16,11 +16,13 @@ return {
             vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
           end
 
-          map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition') --  To jump back, press <C-t>.
-          map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
-          map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
-          map('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
-          map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+          local fzf = require('fzf-lua')
+
+          map('gd', fzf.lsp_definitions, '[G]oto [D]efinition')
+          map('gr', fzf.lsp_references, '[G]oto [R]eferences')
+          map('<leader>D', fzf.lsp_typedefs, 'Type [D]efinition')
+          map('<leader>ds', fzf.lsp_document_symbols, '[D]ocument [S]ymbols')
+          map('<leader>ws', fzf.lsp_workspace_symbols, '[W]orkspace [S]ymbols')
           map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
           map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
           map('K', vim.lsp.buf.hover, 'Hover Documentation')
@@ -28,8 +30,8 @@ return {
         end,
       })
 
+      -- REMOVE cmp_nvim_lsp references
       local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
       local servers = {
         gopls = {
@@ -55,8 +57,8 @@ return {
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
-        ensure_installed = ensure_installed, -- List of servers to install
-        automatic_enable = true, -- Automatically enable installed servers
+        ensure_installed = ensure_installed,
+        automatic_enable = true,
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
@@ -68,4 +70,4 @@ return {
     end,
   },
 }
--- vim: ts=2 sts=2 sw=2 et
+
