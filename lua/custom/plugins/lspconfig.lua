@@ -30,8 +30,9 @@ return {
         end,
       })
 
-      -- REMOVE cmp_nvim_lsp references
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
+      -- NOTE: both options work
+      --local capabilities = vim.lsp.protocol.make_client_capabilities()
+      local capabilities = require('blink.cmp').get_lsp_capabilities()
 
       local servers = {
         gopls = {
