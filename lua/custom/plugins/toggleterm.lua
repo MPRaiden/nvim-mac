@@ -2,32 +2,52 @@ return {
   {
     'akinsho/toggleterm.nvim',
     version = '*',
-    opts = {
-      open_mapping = [[<leader>t]],
-      -- trying out tab terminal direction
-      direction = 'tab',
-      size = function(term)
-        if term.direction == 'horizontal' then
-          return math.floor(vim.o.lines * 0.3)
-        end
-      end,
-      start_in_insert = true,
-      insert_mappings = false,
-      persist_mode = false,
-    },
-    config = function(_, opts)
-      require('toggleterm').setup(opts)
+    config = function()
+      local Terminal = require('toggleterm.terminal').Terminal
 
-      vim.api.nvim_create_autocmd({ 'TermOpen', 'BufEnter' }, {
+      -- Create a dedicated horizontal terminal
+      local horiz_term = Terminal:new {
+        direction = 'horizontal',
+        size = function()
+          return math.floor(vim.o.lines * 0.33)
+        end,
+        start_in_insert = true,
+        close_on_exit = false,
+        persist_mode = false, -- disable to force insert mode each toggle
+      }
+
+      require('toggleterm').setup {
+        direction = 'horizontal',
+        size = function(_)
+          return math.floor(vim.o.lines * 0.33)
+        end,
+        start_in_insert = true,
+        insert_mappings = true,
+        terminal_mappings = true,
+        persist_mode = false,
+        close_on_exit = false,
+      }
+
+      -- Toggle terminal with leader+t
+      vim.keymap.set('n', '<leader>t', function()
+        horiz_term:toggle()
+      end, { desc = 'Toggle horizontal terminal' })
+      vim.keymap.set('i', '<leader>t', '<Esc><Cmd>lua horiz_term:toggle()<CR>', { desc = 'Toggle horizontal terminal', silent = true })
+
+      -- Always enter insert mode on open
+      vim.api.nvim_create_autocmd({ 'TermOpen', 'BufEnter', 'TermEnter' }, {
         pattern = 'term://*toggleterm#*',
         callback = function()
-          vim.cmd 'startinsert'
+          vim.cmd.startinsert()
+        end,
+      })
 
-          -- map <Esc><Esc> in terminal mode to switch to normal mode
-          vim.api.nvim_buf_set_keymap(0, 't', '<Esc><Esc>', '<C-\\><C-n>', { noremap = true, silent = true })
-
-          -- keep <leader>t mapped inside terminal for toggling
-          vim.api.nvim_buf_set_keymap(0, 't', '<leader>t', '<C-\\><C-n><Cmd>ToggleTerm<CR>', { noremap = true, silent = true })
+      -- Double-Esc to normal mode in terminal
+      vim.api.nvim_create_autocmd('TermOpen', {
+        pattern = 'term://*toggleterm#*',
+        callback = function()
+          local opts = { buffer = 0, noremap = true, silent = true }
+          vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', opts)
         end,
       })
     end,
