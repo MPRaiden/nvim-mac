@@ -18,7 +18,6 @@ return {
     config = function()
       if vim.g.neovide then
         vim.g.neovide_padding_top = 30
-        vim.g.neovide_hide_mouse_when_typing = true
       end
 
       vim.cmd.colorscheme 'tokyonight-night' -- night, storm, day
@@ -38,8 +37,7 @@ return {
       }
 
       if vim.g.neovide then
-        vim.g.neovide_padding_top = 20
-        vim.g.neovide_hide_mouse_when_typing = true
+        vim.g.neovide_padding_top = 30
       end
       vim.cmd.colorscheme 'onedark'
     end,
@@ -61,7 +59,6 @@ return {
 
       if vim.g.neovide then
         vim.g.neovide_padding_top = 30
-        vim.g.neovide_hide_mouse_when_typing = true
         --vim.g.neovide_opacity = 0.9
       end
 
