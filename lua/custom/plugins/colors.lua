@@ -26,12 +26,12 @@ return {
   },
   {
     'navarasu/onedark.nvim',
-    enabled = false,
+    enabled = true,
     lazy = false,
     priority = 1000,
     config = function()
       require('onedark').setup {
-        style = 'darker', -- dark, darker, cool, deep, warm, warmer
+        style = 'deep', -- dark, darker, cool, deep, warm, warmer
         code_style = {
           comments = 'none',
         },
@@ -47,7 +47,7 @@ return {
   {
     'rose-pine/neovim',
     name = 'rose-pine',
-    enabled = true,
+    enabled = false,
     priority = 1000,
     lazy = false,
     config = function()
