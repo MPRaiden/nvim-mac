@@ -19,7 +19,7 @@ vim.keymap.set('t', '<esc><esc>', '<c-\\><c-n>')
 vim.keymap.set('n', 'tt', function()
   vim.cmd.new()
   vim.cmd.wincmd 'J'
-  vim.api.nvim_win_set_height(0, 15)
+  vim.api.nvim_win_set_height(0, 25)
   vim.wo.winfixheight = true
   vim.cmd.term()
   vim.cmd.startinsert()

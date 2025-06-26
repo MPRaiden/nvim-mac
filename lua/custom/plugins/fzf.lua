@@ -24,13 +24,13 @@ return {
       end,
       desc = 'Find in neovim configuration',
     },
-    {
-      '<leader>sh',
-      function()
-        require('fzf-lua').helptags()
-      end,
-      desc = '[F]ind [H]elp',
-    },
+    -- {
+    --   '<leader>sh',
+    --   function()
+    --     require('fzf-lua').helptags()
+    --   end,
+    --   desc = '[F]ind [H]elp',
+    -- },
     {
       '<leader>so',
       function()
