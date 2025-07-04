@@ -25,15 +25,15 @@ return {
         end,
       },
     },
-    terminal = {
-      enabled = true,
-      win = {
-        style = 'float',
-        width = math.floor(vim.o.columns * 0.5),
-        height = math.floor(vim.o.lines * 0.5),
-        border = 'rounded',
-      },
-    },
+    -- terminal = {
+    --   enabled = true,
+    --   win = {
+    --     --style = 'float',
+    --     --width = math.floor(vim.o.columns * 0.5),
+    --     height = math.floor(vim.o.lines * 0.35),
+    --     border = 'rounded',
+    --   },
+    -- },
     notifier = {
       enabled = true,
     },
@@ -73,13 +73,13 @@ return {
       end,
       desc = '[S]earch [N]eovim files',
     },
-    {
-      '<leader>tt',
-      function()
-        Snacks.terminal()
-      end,
-      desc = 'Toggle Terminal',
-    },
+    -- {
+    --   '<leader>tt',
+    --   function()
+    --     Snacks.terminal()
+    --   end,
+    --   desc = 'Toggle Terminal',
+    -- },
     {
       '<leader>sd',
       function()
@@ -99,7 +99,7 @@ return {
       function()
         Snacks.picker.projects()
       end,
-      desc = 'Projects',
+      desc = 'Search Projects',
     },
   },
 }
