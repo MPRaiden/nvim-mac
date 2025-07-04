@@ -64,7 +64,7 @@ return {
         vim.g.neovide_padding_top = 30
       end
 
-      vim.cmd.colorscheme 'tokyonight' -- night, storm, day
+      vim.cmd.colorscheme 'tokyonight-night' -- night, storm, day, moon
     end,
   },
 }
