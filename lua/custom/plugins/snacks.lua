@@ -8,7 +8,6 @@ return {
       sources = {
         files = {
           hidden = true,
-          --ignored = true,
         },
       },
       layout = {
@@ -70,13 +69,6 @@ return {
         Snacks.picker.diagnostics()
       end,
       desc = 'Diagnostics',
-    },
-    {
-      '<leader>gb',
-      function()
-        Snacks.picker.git_branches()
-      end,
-      desc = 'Git Branches',
     },
     {
       '<leader>fp',
