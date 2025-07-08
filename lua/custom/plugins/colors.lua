@@ -18,11 +18,6 @@ return {
           migrations = true,
         },
 
-        -- palette = {
-        --   moon = {
-        --     base = '#000000',
-        --   },
-        -- }, -- required: at least an empty table
         groups = {}, -- required
         highlight_groups = {}, -- required
 
@@ -45,6 +40,30 @@ return {
   },
   {
     'folke/tokyonight.nvim',
+    enabled = false,
+    lazy = false,
+    priority = 10000,
+    opts = {
+      transparent = true,
+      terminal_colors = true,
+      styles = {
+        comments = { italic = false },
+        keywords = { italic = false },
+        functions = {},
+        variables = {},
+      },
+      sidebars = { 'qf', 'help' },
+    },
+    config = function()
+      if vim.g.neovide then
+        vim.g.neovide_padding_top = 10
+      end
+
+      vim.cmd.colorscheme 'tokyonight-night' -- night, storm, day, moon
+    end,
+  },
+  {
+    'savq/melange-nvim',
     enabled = true,
     lazy = false,
     priority = 10000,
@@ -61,10 +80,10 @@ return {
     },
     config = function()
       if vim.g.neovide then
-        vim.g.neovide_padding_top = 30
+        vim.g.neovide_padding_top = 10
       end
 
-      vim.cmd.colorscheme 'tokyonight-night' -- night, storm, day, moon
+      vim.cmd.colorscheme 'melange'
     end,
   },
 }

@@ -6,7 +6,8 @@ return {
         lua = { 'stylua' },
         python = { 'black' },
         rust = { 'rustfmt' },
-        javascript = { 'prettierd' },
+        javascript = { 'eslint_d' },
+        typescript = { 'eslint_d' },
         golang = { 'gofumpt' },
         sql = { 'sqlfmt' },
         yaml = { 'yamlfmt' }, -- TODO: Investigate how to customize this (current formatting doesn't leave spaces between stages)
