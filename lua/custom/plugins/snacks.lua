@@ -27,6 +27,10 @@ return {
     notifier = {
       enabled = true,
     },
+    terminal = {
+      enabled = true,
+      win = { position = 'right', width = 0.5 },
+    },
   },
 
   dependencies = {
@@ -76,6 +80,13 @@ return {
         Snacks.picker.projects()
       end,
       desc = 'Search Projects',
+    },
+    {
+      '<leader>tt',
+      function()
+        Snacks.terminal()
+      end,
+      desc = 'Toggle Terminal',
     },
   },
 }
