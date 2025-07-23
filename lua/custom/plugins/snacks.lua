@@ -27,10 +27,10 @@ return {
     notifier = {
       enabled = true,
     },
-    terminal = {
-      enabled = true,
-      win = { position = 'right', width = 0.5 },
-    },
+    -- terminal = {
+    --   enabled = true,
+    --   win = { position = 'right', width = 0.5 },
+    -- },
   },
 
   dependencies = {
