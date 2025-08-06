@@ -2,7 +2,7 @@ return {
   {
     'rose-pine/neovim',
     name = 'rose-pine',
-    enabled = true,
+    enabled = false,
     priority = 10000,
     lazy = false,
     config = function()
@@ -35,7 +35,7 @@ return {
   },
   {
     'folke/tokyonight.nvim',
-    enabled = false,
+    enabled = true,
     lazy = false,
     priority = 10000,
     opts = {
