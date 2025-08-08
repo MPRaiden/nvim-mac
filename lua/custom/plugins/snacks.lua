@@ -27,10 +27,10 @@ return {
     notifier = {
       enabled = true,
     },
-    terminal = {
-      enabled = true,
-      win = { position = 'right', width = 0.5 },
-    },
+    -- terminal = {
+    --   enabled = true,
+    --   win = { position = 'right', width = 0.5 },
+    -- },
   },
 
   dependencies = {
@@ -39,6 +39,13 @@ return {
   },
 
   keys = {
+    {
+      '<leader><space>',
+      function()
+        Snacks.picker.smart()
+      end,
+      desc = 'Smart Find Files',
+    },
     {
       '<leader>sf',
       function()
@@ -81,12 +88,19 @@ return {
       end,
       desc = 'Search Projects',
     },
+    -- {
+    --   '<leader>tt',
+    --   function()
+    --     Snacks.terminal()
+    --   end,
+    --   desc = 'Toggle Terminal',
+    -- },
     {
-      '<leader>tt',
+      '<leader>sq',
       function()
-        Snacks.terminal()
+        Snacks.picker.qflist()
       end,
-      desc = 'Toggle Terminal',
+      desc = 'Quickfix List',
     },
   },
 }
