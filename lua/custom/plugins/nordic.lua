@@ -1,6 +1,6 @@
 return {
   'AlexvZyl/nordic.nvim',
-  enabled = true,
+  enabled = false,
   lazy = false, -- load immediately so theme is applied
   priority = 1000, -- high priority to override other plugins
   config = function()
