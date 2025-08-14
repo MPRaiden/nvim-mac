@@ -95,12 +95,5 @@ return {
     --   end,
     --   desc = 'Toggle Terminal',
     -- },
-    {
-      '<leader>sq',
-      function()
-        Snacks.picker.qflist()
-      end,
-      desc = 'Quickfix List',
-    },
   },
 }
