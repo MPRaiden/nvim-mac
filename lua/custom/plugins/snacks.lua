@@ -95,5 +95,12 @@ return {
     --   end,
     --   desc = 'Toggle Terminal',
     -- },
+    {
+      '<leader>st',
+      function()
+        Snacks.picker.colorschemes()
+      end,
+      desc = 'Search Colorschemes',
+    },
   },
 }
