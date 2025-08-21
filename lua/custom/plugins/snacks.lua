@@ -27,10 +27,10 @@ return {
     notifier = {
       enabled = true,
     },
-    -- terminal = {
-    --   enabled = true,
-    --   win = { position = 'right', width = 0.5 },
-    -- },
+    terminal = {
+      enabled = true,
+      win = { position = 'bottom', width = 0.3, height = 0.3 },
+    },
   },
 
   dependencies = {
@@ -88,19 +88,12 @@ return {
       end,
       desc = 'Search Projects',
     },
-    -- {
-    --   '<leader>tt',
-    --   function()
-    --     Snacks.terminal()
-    --   end,
-    --   desc = 'Toggle Terminal',
-    -- },
     {
-      '<leader>st',
+      '<leader>tt',
       function()
-        Snacks.picker.colorschemes()
+        Snacks.terminal()
       end,
-      desc = 'Search Colorschemes',
+      desc = 'Toggle Terminal',
     },
   },
 }
