@@ -23,8 +23,5 @@ return {
         require('conform').format { bufnr = args.buf }
       end,
     })
-
-    -- Bind <leader>f to format
-    vim.api.nvim_set_keymap('n', '<leader>f', ':lua require("conform").format()<CR>', { noremap = true, silent = true })
   end,
 }
