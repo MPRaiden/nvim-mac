@@ -2,7 +2,7 @@ return {
   -- catppuccin
   {
     'catppuccin/nvim',
-    enabled = true,
+    enabled = false,
     name = 'catppuccin',
     lazy = false, -- load right away (so your theme applies immediately)
     priority = 1000, -- high priority ensures it loads before other plugins
@@ -139,7 +139,7 @@ return {
   {
     'navarasu/onedark.nvim',
     name = 'onedark',
-    enabled = false,
+    enabled = true,
     lazy = false,
     priority = 1000,
     config = function()
