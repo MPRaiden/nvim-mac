@@ -36,13 +36,6 @@ return {
 
   keys = {
     {
-      '<leader><space>',
-      function()
-        Snacks.picker.smart()
-      end,
-      desc = 'Smart Find Files',
-    },
-    {
       '<leader>sf',
       function()
         require('snacks').picker.files()
@@ -76,13 +69,6 @@ return {
         Snacks.picker.diagnostics()
       end,
       desc = 'Diagnostics',
-    },
-    {
-      '<leader>fp',
-      function()
-        Snacks.picker.projects()
-      end,
-      desc = 'Search Projects',
     },
   },
 }
