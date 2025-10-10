@@ -27,6 +27,10 @@ return {
     notifier = {
       enabled = true,
     },
+    terminal = {
+      enabled = true,
+      win = { position = 'bottom', width = 0.20 },
+    },
   },
 
   dependencies = {
@@ -69,6 +73,13 @@ return {
         Snacks.picker.diagnostics()
       end,
       desc = 'Diagnostics',
+    },
+    {
+      '<leader>tt',
+      function()
+        Snacks.terminal()
+      end,
+      desc = 'Toggle Terminal',
     },
   },
 }
