@@ -1,127 +1,4 @@
 return {
-  -- dracula
-  {
-    'Mofiqul/dracula.nvim',
-    name = 'dracula',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require('dracula').setup {
-        transparent_bg = true,
-      }
-      vim.cmd.colorscheme 'dracula'
-    end,
-  },
-
-  -- catppuccin
-  {
-    'catppuccin/nvim',
-    enabled = false,
-    name = 'catppuccin',
-    lazy = false, -- load right away (so your theme applies immediately)
-    priority = 1000, -- high priority ensures it loads before other plugins
-    config = function()
-      require('catppuccin').setup {
-        flavour = 'macchiato', -- one of: "latte", "frappe", "macchiato", "mocha"
-        background = { -- :h catppuccin-background
-          light = 'latte',
-          dark = 'macchiato',
-        },
-        auto_integrations = true,
-        transparent_background = true, -- disables background color
-        show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
-        term_colors = true, -- set terminal ANSI colors to theme palette
-        dim_inactive = {
-          enabled = false, -- dims inactive windows
-          shade = 'dark',
-          percentage = 0.15,
-        },
-        no_italic = true, -- Force no italic
-        no_bold = false, -- Force no bold
-        no_underline = false, -- Force no underline
-        styles = { -- Handles the styles of general hi groups (see `:h catppuccin.highlights`)
-          comments = { 'italic' },
-          -- conditionals = { 'italic' },
-          loops = {},
-          functions = {},
-          keywords = {},
-          strings = {},
-          variables = {},
-          numbers = {},
-          booleans = {},
-          properties = {},
-          types = {},
-          operators = {},
-        },
-        color_overrides = {},
-        -- custom_highlights = function(colors)
-        --   return {
-        --     -- override highlight groups after colors are computed
-        --     -- e.g.
-        --     -- TelescopeBorder = { bg = colors.surface0, fg = colors.surface0 },
-        --     -- TelescopePromptNormal = { bg = colors.crust },
-        --   }
-        -- end,
-        integrations = {
-          native_lsp = {
-            enabled = true,
-            underlines = {
-              errors = { 'undercurl' },
-              warnings = { 'undercurl' },
-            },
-          },
-          --         -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
-        },
-      }
-      vim.cmd.colorscheme 'catppuccin-macchiato'
-    end,
-  },
-
-  -- rose pine
-  {
-    'rose-pine/neovim',
-    name = 'rose-pine',
-    enabled = false,
-    lazy = false, -- load right away (so your theme applies immediately)
-    priority = 1000, -- high priority ensures it loads before other plugins
-    config = function()
-      require('rose-pine').setup {
-        -- @usage 'main' | 'moon' | 'dawn'
-        variant = 'main',
-        -- @usage 'auto' | 'neovim' | 'kitty' | 'wezterm' | 'iterm' | 'ghostty'
-        dark_variant = 'main',
-        bold_vert_split = false,
-        dim_inactive_windows = false,
-        extend_background_behind_borders = true,
-
-        disable_background = false, -- Disables setting the background color.
-        disable_background = true, -- For a transparent background
-        disable_float_background = true, -- Disables setting the background color for floating windows.
-        disable_terminal_colors = false, -- Disables setting terminal colors.
-
-        -- Change specific vim highlight groups.
-        -- For a list of available colors, see `:h rose-pine-colors`
-        highlight_groups = {
-          Comment = { fg = 'foam' },
-          VertSplit = { fg = 'muted', bg = 'muted' },
-        },
-
-        -- Set highlight groups for specific filetypes.
-        filetype_highlights = {},
-
-        -- The styles of variants can be overwritten.
-        styles = {
-          bold = true,
-          italic = false,
-          transparency = false,
-        },
-      }
-
-      vim.cmd.colorscheme 'rose-pine'
-    end,
-  },
-
-  -- tokyonight
   {
     'folke/tokyonight.nvim',
     name = 'tokyonight',
@@ -129,47 +6,98 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
-      style = 'night', -- The theme comes in three styles, `storm`, `night`, and `day`
-      transparent = true, -- Enable this to disable background color and use your terminal background
+      transparent = true,
       styles = {
-        -- Style to be applied to different syntax groups
-        -- Value is any valid attr-list value for `:help nvim_set_hl`
         comments = { italic = true },
         keywords = { italic = false },
-        -- Background styles. Can be "dark", "transparent" or "normal"
-        sidebars = 'transparent', -- style for sidebars, such as NvimTree
-        floats = 'transparent', -- style for floating windows
+        sidebars = 'transparent',
+        floats = 'transparent',
       },
     },
     config = function(_, opts)
       require('tokyonight').setup(opts)
-      -- Load the colorscheme here
       vim.cmd.colorscheme 'tokyonight'
     end,
   },
 
-  -- onedark
   {
-    'navarasu/onedark.nvim',
-    name = 'onedark',
+    'AlexvZyl/nordic.nvim',
+    name = 'nordic',
     enabled = false,
     lazy = false,
     priority = 1000,
-    config = function()
-      require('onedark').setup {
-        style = 'deep', -- Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'
-        transparent = true, -- Show/hide background
-        term_colors = true, -- Change terminal color scheme
-        ending_tildes = false, -- Show the end-of-buffer tildes
-        code_style = {
-          comments = 'italic',
-          keywords = 'none',
-          functions = 'none',
-          strings = 'none',
-          variables = 'none',
+    opts = {
+      transparent = {
+        bg = true,
+        float = false,
+      },
+      -- cursorline = {
+      --   theme = 'dark', -- 'light' or 'dark' cursorline background
+      -- },
+      bold_keywords = false,
+      italic_comments = true,
+      bright_border = true,
+      reduced_blue = true, -- Softer blue tones
+      -- You can customize highlight groups here if desired
+      -- on_highlights = function(hl, c)
+      --   hl.CursorLineNr = { fg = c.orange.base, bold = true }
+      --   hl.LineNrAbove = { fg = c.gray3 }
+      --   hl.LineNrBelow = { fg = c.gray3 }
+      -- end,
+    },
+    config = function(_, opts)
+      require('nordic').setup(opts)
+      vim.cmd.colorscheme 'nordic'
+    end,
+  },
+
+  {
+    'gbprod/nord.nvim',
+    name = 'nord',
+    enabled = true,
+    lazy = false,
+    priority = 1000,
+    opts = {
+      transparent = true, -- disable background so the theme will set it
+      terminal_colors = true, -- enable terminal (builtin) colors
+      -- diff = { mode = 'bg' }, -- diff mode: background vs foreground
+      -- borders = true, -- enable border between vertical splits
+      -- errors = { mode = 'bg' }, -- how errors/diagnostics use backgrounds
+      -- search = { theme = 'vim' }, -- search highlight theme: "vim" or "vscode"
+      styles = {
+        comments = { italic = true },
+        keywords = {},
+        functions = {},
+        variables = {},
+        bufferline = {
+          current = {},
+          modified = { italic = true },
         },
-      }
-      vim.cmd.colorscheme 'onedark'
+        lualine_bold = false,
+      },
+      colorblind = {
+        enable = false,
+        preserve_background = false,
+        severity = {
+          protan = 0.0,
+          deutan = 0.0,
+          tritan = 0.0,
+        },
+      },
+      on_colors = function(colors)
+        -- override palette if desired
+        -- colors.nord0_gui = "#1b2229"
+      end,
+      -- on_highlights = function(highlights, colors)
+      --   -- custom highlight overrides
+      --   highlights.CursorLineNr = { fg = colors.nord9_gui, bold = true }
+      --   highlights.LineNrAbove = { fg = colors.nord6_gui }
+      --   highlights.LineNrBelow = { fg = colors.nord6_gui }
+      -- end,
+    },
+    config = function(_, opts)
+      require('nord').setup(opts)
+      vim.cmd.colorscheme 'nord'
     end,
   },
 }
