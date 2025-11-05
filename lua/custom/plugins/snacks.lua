@@ -27,6 +27,9 @@ return {
     notifier = {
       enabled = true,
     },
+    scroll = {
+      enabled = true,
+    },
   },
 
   dependencies = {
@@ -69,6 +72,13 @@ return {
         Snacks.picker.diagnostics()
       end,
       desc = 'Diagnostics',
+    },
+    {
+      '<leader>n',
+      function()
+        Snacks.notifier.show_history()
+      end,
+      desc = 'Notification History',
     },
   },
 }

@@ -19,51 +19,19 @@ return {
       vim.cmd.colorscheme 'tokyonight'
     end,
   },
-
-  {
-    'AlexvZyl/nordic.nvim',
-    name = 'nordic',
-    enabled = false,
-    lazy = false,
-    priority = 1000,
-    opts = {
-      transparent = {
-        bg = true,
-        float = false,
-      },
-      -- cursorline = {
-      --   theme = 'dark', -- 'light' or 'dark' cursorline background
-      -- },
-      bold_keywords = false,
-      italic_comments = true,
-      bright_border = true,
-      reduced_blue = true, -- Softer blue tones
-      -- You can customize highlight groups here if desired
-      -- on_highlights = function(hl, c)
-      --   hl.CursorLineNr = { fg = c.orange.base, bold = true }
-      --   hl.LineNrAbove = { fg = c.gray3 }
-      --   hl.LineNrBelow = { fg = c.gray3 }
-      -- end,
-    },
-    config = function(_, opts)
-      require('nordic').setup(opts)
-      vim.cmd.colorscheme 'nordic'
-    end,
-  },
-
   {
     'gbprod/nord.nvim',
     name = 'nord',
-    enabled = true,
+    enabled = false,
     lazy = false,
     priority = 1000,
     opts = {
       transparent = true, -- disable background so the theme will set it
       terminal_colors = true, -- enable terminal (builtin) colors
-      -- diff = { mode = 'bg' }, -- diff mode: background vs foreground
-      -- borders = true, -- enable border between vertical splits
-      -- errors = { mode = 'bg' }, -- how errors/diagnostics use backgrounds
-      -- search = { theme = 'vim' }, -- search highlight theme: "vim" or "vscode"
+      diff = { mode = 'bg' }, -- diff mode: background vs foreground
+      borders = true, -- enable border between vertical splits
+      errors = { mode = 'bg' }, -- how errors/diagnostics use backgrounds
+      search = { theme = 'vim' }, -- search highlight theme: "vim" or "vscode"
       styles = {
         comments = { italic = true },
         keywords = {},
@@ -71,7 +39,7 @@ return {
         variables = {},
         bufferline = {
           current = {},
-          modified = { italic = true },
+          modified = { italic = false },
         },
         lualine_bold = false,
       },
@@ -98,6 +66,81 @@ return {
     config = function(_, opts)
       require('nord').setup(opts)
       vim.cmd.colorscheme 'nord'
+    end,
+  },
+  {
+    'catppuccin/nvim',
+    name = 'catppuccin',
+    enabled = true,
+    lazy = false,
+    priority = 1000,
+    opts = {
+      flavour = 'macchiato', -- options: "latte", "frappe", "macchiato", "mocha"
+      -- background = {
+      --   light = 'latte',
+      --   dark = 'mocha',
+      -- },
+      transparent_background = true,
+      term_colors = true,
+      dim_inactive = {
+        enabled = true,
+        shade = 'dark',
+        percentage = 0.15,
+      },
+      no_italic = false,
+      no_bold = true,
+      styles = {
+        comments = { 'italic' },
+        conditionals = {},
+        loops = {},
+        functions = {},
+        keywords = {},
+        strings = {},
+        variables = {},
+        numbers = {},
+        booleans = {},
+        properties = {},
+        types = {},
+        operators = {},
+      },
+      color_overrides = {
+        -- you can override colors here per flavour or “all”
+        all = {
+          -- e.g. text = "#ffffff",
+        },
+        mocha = {
+          -- override mocha-specific colors
+        },
+      },
+      highlight_overrides = {
+        all = function(colors)
+          return {
+            -- e.g. CursorLine = { bg = colors.surface0 },
+          }
+        end,
+        mocha = function(mocha)
+          return {
+            -- e.g. LineNr = { fg = mocha.overlay1 },
+          }
+        end,
+      },
+      integrations = {
+        notify = true,
+        flash = true,
+        blink_cmp = {
+          style = 'bordered',
+        },
+        snacks = {
+          enabled = true,
+          indent_scope_color = '', -- catppuccin color (eg. `lavender`) Default: text
+        },
+        lsp_trouble = true,
+        -- many more per the docs :contentReference[oaicite:1]{index=1}
+      },
+    },
+    config = function(_, opts)
+      require('catppuccin').setup(opts)
+      vim.cmd.colorscheme 'catppuccin'
     end,
   },
 }
