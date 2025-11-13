@@ -1,5 +1,7 @@
 -- For more options, you can see `:help option-list`
 
+vim.o.winborder = 'rounded'
+
 -- Tab and shift width set to 4 characters
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2

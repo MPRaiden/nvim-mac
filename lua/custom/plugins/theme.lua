@@ -52,11 +52,6 @@ return {
       catppuccin.setup(opts)
       vim.cmd.colorscheme 'catppuccin-macchiato'
 
-      -- make sure Neovim uses terminal colors (Ghostty Catppuccin)
-      vim.opt.termguicolors = true
-      vim.g.catppuccin_flavour = 'macchiato'
-      vim.g.catppuccin_terminal_colors = true
-
       -- fully transparent backgrounds to match Ghostty terminal
       local transparent_groups = {
         'Normal',
