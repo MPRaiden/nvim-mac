@@ -1,5 +1,6 @@
 -- For more options, you can see `:help option-list`
 
+-- Sets visible borders for all floating windows
 vim.o.winborder = 'rounded'
 
 -- Tab and shift width set to 4 characters
