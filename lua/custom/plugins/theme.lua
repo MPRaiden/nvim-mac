@@ -1,5 +1,18 @@
 return {
   {
+    'gbprod/nord.nvim',
+    name = 'nord',
+    enabled = true,
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require('nord').setup {
+        transparent = true,
+      }
+      vim.cmd.colorscheme 'nord'
+    end,
+  },
+  {
     'folke/tokyonight.nvim',
     name = 'tokyonight',
     enabled = false,
@@ -16,17 +29,17 @@ return {
     },
     config = function(_, opts)
       require('tokyonight').setup(opts)
-      vim.cmd.colorscheme 'tokyonight-storm'
+      vim.cmd.colorscheme 'tokyonight-night'
     end,
   },
   {
     'catppuccin/nvim',
     name = 'catppuccin',
-    enabled = true,
+    enabled = false,
     lazy = false,
     priority = 1000,
     opts = {
-      flavour = 'macchiato',
+      flavour = 'frappe',
       transparent_background = true,
       term_colors = true,
       no_italic = false,
@@ -50,7 +63,7 @@ return {
     config = function(_, opts)
       local catppuccin = require 'catppuccin'
       catppuccin.setup(opts)
-      vim.cmd.colorscheme 'catppuccin-macchiato'
+      vim.cmd.colorscheme 'catppuccin-frappe'
 
       -- fully transparent backgrounds to match Ghostty terminal
       local transparent_groups = {
