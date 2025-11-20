@@ -30,7 +30,10 @@ return {
     scroll = {
       enabled = true,
     },
-    exporer = {
+    explorer = {
+      enabled = true,
+    },
+    terminal = {
       enabled = true,
     },
   },
@@ -96,6 +99,13 @@ return {
         Snacks.explorer()
       end,
       desc = 'File Explorer',
+    },
+    {
+      '<leader>tt',
+      function()
+        Snacks.terminal()
+      end,
+      desc = 'Terminal',
     },
   },
 }
