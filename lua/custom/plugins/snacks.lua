@@ -24,8 +24,15 @@ return {
         end,
       },
     },
+    input = {
+      enabled = true,
+      icon = ' ',
+      win = { style = 'input' },
+      expand = true,
+    },
     notifier = {
       enabled = true,
+      style = 'fancy',
     },
     scroll = {
       enabled = true,
