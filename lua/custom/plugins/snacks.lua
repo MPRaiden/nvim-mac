@@ -114,5 +114,12 @@ return {
       end,
       desc = 'Terminal',
     },
+    {
+      '<leader>sc',
+      function()
+        Snacks.picker.colorschemes()
+      end,
+      desc = 'Colorschemes',
+    },
   },
 }
