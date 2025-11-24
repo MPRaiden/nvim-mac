@@ -13,7 +13,6 @@ return {
       layout = {
         preset = 'default',
       },
-
       actions = {
         ---@param p snacks.Picker
         toggle_cwd = function(p)
@@ -37,10 +36,10 @@ return {
     scroll = {
       enabled = true,
     },
-    explorer = {
+    terminal = {
       enabled = true,
     },
-    terminal = {
+    statuscolumn = {
       enabled = true,
     },
   },
@@ -101,25 +100,11 @@ return {
       desc = 'Notification History',
     },
     {
-      '<leader>e',
-      function()
-        Snacks.explorer()
-      end,
-      desc = 'File Explorer',
-    },
-    {
       '<leader>tt',
       function()
         Snacks.terminal()
       end,
       desc = 'Terminal',
-    },
-    {
-      '<leader>sc',
-      function()
-        Snacks.picker.colorschemes()
-      end,
-      desc = 'Colorschemes',
     },
   },
 }
