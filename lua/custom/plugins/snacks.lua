@@ -31,15 +31,12 @@ return {
     },
     notifier = {
       enabled = true,
-      style = 'fancy',
+      style = 'compact',
     },
     scroll = {
       enabled = true,
     },
     terminal = {
-      enabled = true,
-    },
-    statuscolumn = {
       enabled = true,
     },
   },

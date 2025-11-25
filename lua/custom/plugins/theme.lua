@@ -15,20 +15,4 @@ return {
       vim.cmd 'colorscheme vague'
     end,
   },
-
-  {
-    'sainnhe/sonokai',
-    name = 'sonokai',
-    enabled = false,
-    lazy = false,
-    priority = 1000,
-    config = function()
-      -- Styles: 'default', 'atlantis', 'andromeda', 'shusia', 'maia', 'espresso'
-      vim.g.sonokai_style = 'andromeda'
-      vim.g.sonokai_better_performance = 0
-      -- Transparency: 0 = none, 1 = normal, 2 = all (includes status line)
-      vim.g.sonokai_transparent_background = 1
-      vim.cmd.colorscheme 'sonokai'
-    end,
-  },
 }
