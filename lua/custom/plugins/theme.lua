@@ -1,18 +1,15 @@
 return {
   {
-    'vague-theme/vague.nvim',
-    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    'gbprod/nord.nvim',
+    name = 'nord',
     enabled = true,
-    priority = 1000, -- make sure to load this before all the other plugins
+    lazy = false,
+    priority = 1000,
     config = function()
-      -- NOTE: you do not need to call setup if you don't want to.
-      require('vague').setup {
+      require('nord').setup {
         transparent = true,
-        bold = true,
-        italic = false,
-        -- optional configuration here
       }
-      vim.cmd 'colorscheme vague'
+      vim.cmd.colorscheme 'nord'
     end,
   },
 }
