@@ -25,22 +25,10 @@ return {
           },
         },
       },
-      -- Rest of your configuration remains the same
       sources = {
         files = {
           hidden = true,
         },
-      },
-      actions = {
-        ---@param p snacks.Picker
-        toggle_cwd = function(p)
-          -- Note: vim.loop is deprecated in nvim 0.10+, prefer vim.uv if available
-          local loop = vim.uv or vim.loop
-          local cwd = vim.fs.normalize(loop.cwd())
-          local current = p:cwd()
-          p:set_cwd(current == cwd and vim.fn.stdpath 'config' or cwd)
-          p:find()
-        end,
       },
     },
     input = {
