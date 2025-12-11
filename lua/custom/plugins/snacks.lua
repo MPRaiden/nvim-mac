@@ -44,9 +44,6 @@ return {
     scroll = {
       enabled = true,
     },
-    terminal = {
-      enabled = true,
-    },
   },
 
   dependencies = {
@@ -109,13 +106,6 @@ return {
         Snacks.picker.help()
       end,
       desc = '[F]ind [H]elp Pages',
-    },
-    {
-      '<leader>tt',
-      function()
-        Snacks.terminal.toggle()
-      end,
-      desc = '[T]erminal',
     },
   },
 }
